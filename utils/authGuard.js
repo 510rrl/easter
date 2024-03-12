@@ -14,12 +14,5 @@ const withGuard = (req, res, next) => {
     }
   };
   
-  const withoutGuard = (req, res, next) => {
-    if (!req.session.logged_in) {
-      next();
-    } else {
-      res.redirect('/');
-    }
-  };
   
   module.exports = { withGuard, apiGuard, withoutGuard };
